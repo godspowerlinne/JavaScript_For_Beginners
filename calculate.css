@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: #000;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Calculator div  */
+.calculate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block: 6rem !important;
+    gap: 1rem;
+    border: 5px solid #ffa5a5;
+    width: max-content;
+    margin: auto;
+    border-radius: 10px;
+    padding-top: 8rem;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    @media (max-width: 399px) {
+        width: 100vw;
+    }
+}
+
+h1{
+    color: #fffb;
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(255,255,255,1);
+    padding: 10px 20px;
+    width: 400px;
+    border-radius: 10px;
+
+    @media (max-width: 399px) {
+        width: 100vw;
+    }
+}
+
+/* Container  */
+.container{
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (max-width: 399px) {
+        width: 100%;
+    }
+}
+/* Result Displayer */
+.myResult{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #ccca;
+
+}
+.display{
+    width: 100%;
+    background-color: #f5f5f5be;
+    cursor:not-allowed;
+    border:  1px  solid #ccc;
+    border-bottom: 0px;
+    outline: none;
+    padding: 10px;
+    padding-bottom: 0px;
+    font-size: 18px;
+    border-radius: 7px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    
+}
+
+#displayResult{
+    text-align: right;
+    font-weight: bold;
+    border:  1px  solid #ccc;
+    padding: 10px;
+    border-top: 0px;
+    border-radius: 7px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    &::placeholder{
+        color: #000;
+        font-size: 20px;
+    }
+}
+
+/* Calculator Inputs  */
+#validationText{
+    color: #ff6a6a ;
+    font-size: 16px;
+    height: 40px;
+    font-weight: 900;
+    text-shadow: 0px 5px 10px rgba(0,0,0,1);
+}
+.myInputs{
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f566;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#firstInput,
+#lastInput{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f566;
+    border: 1px solid green;
+    width: 50%;
+    margin: auto;
+}
+.firstInput{
+    position: relative;
+}
+label {
+    position: absolute;
+    left: 57%;
+    top: 2%;
+    font-size: 12px;
+    background-color: #f5f5f588;
+    height: 33px;
+    place-content: end end;
+    padding-left: 20px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #ff0000be;
+
+    @media (max-width: 370px) {
+        left: 55%;
+    }
+    @media (max-width: 350px) {
+        left: 53%;
+    }
+}
+
+#firstInput,
+#operatorUsed,
+#lastInput{
+    padding: 10px;
+}
+
+/* Operator Buttons  */
+.buttons {
+    width: 100%;
+    margin: auto;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f5f5f566;
+}
+
+button{
+    font-size: 16px;
+    cursor: pointer;
+    color: #ff0000be;
+    width: 20%;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+}
+
+/* Clear Button */
+button[onclick="clearDisplay()"]{
+    background-color: rgb(0, 54, 0);
+    color: #fffb;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-weight: 900;
+
+    &:hover{
+        background-color: rgb(80, 8, 69);
+        color: #eeed;
+    }
+}
+
+/* Icons */
+.icons {
+    position: absolute;
+    top: 5%;
+    animation: colorChange 5s linear infinite;
+    background-clip: text;
+    color: rgba(255, 255, 255, 0.237);
+
+    i{
+        cursor: pointer;
+    }
+}
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: green;
+    }
+    50% {
+        background-color: blue;
+    }
+    75% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: red;
+    }
+}

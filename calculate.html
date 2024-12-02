@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./calculate.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Calculator div  -->
+    <div class="calculate">
+        <h1>Simple Calculator</h1>
+        <!-- Container  -->
+    <div class="container">
+        <!-- Result Displayer -->
+        <div class="myResult">
+            <input type="text" placeholder="|" value="" class="display" id="displayValue" readonly>
+            <input type="text" placeholder="0" class="display" id="displayResult" readonly>
+        </div>
+        <!-- Calculator Inputs -->
+        <div class="myInputs">
+            <p id="validationText" ></p>
+            <!-- First Input  -->
+            <div class="firstInput">
+                <input type="text" id="firstInput">
+                <label for="firstInput">First <i class="bx bxs-pen" ></i></label>
+            </div>
+            <!-- Last Input  -->
+            <div class="firstInput">
+                <label for="lastInput">Last <i class="bx bxs-pen" ></i></label>
+                <input type="text" id="lastInput">
+            </div>
+            <!-- Operator Buttons  -->
+            <div id="operatorUsed">
+                <button type="button" onclick="multiply()">*</button>
+                <button type="button" onclick="add()">+</button>
+                <button type="button" onclick="subtract()">-</button>
+                <button type="button" onclick="divide()">/</button>
+            </div>
+        </div>
+        <!-- Clear Button  -->
+        <div class="buttons">
+            <button type="button" onclick="clearDisplay()">Clear</button>
+        </div>
+    </div>
+    <!-- Icons -->
+    <div class="icons">
+        <i class="bx bxl-mongodb"></i>
+        <i class="bx bxl-twitter"></i>
+        <i class="bx bxl-instagram"></i>
+        <i class="bx bxl-linkedin"></i>
+        <i class="bx bxl-facebook"></i>
+        <i class="bx bxl-youtube"></i>
+        <i class="bx bxl-discord"></i>
+        <i class="bx bxl-spotify"></i>
+        <i class="bx bxs-leaf"></i>
+        <i class="bx bxs-sun"></i>
+        <i class="bx bxs-moon"></i>
+        <i class="bx bxs-cloud-lightning"></i>
+        <i class="bx bxl-sketch"></i>
+        <i class="bx bxl-google-cloud"></i>
+        <i class="bx bxl-microsoft"></i>
+        <i class="bx bxl-slack"></i>
+    </div>
+    </div>
+    <script src="./calculate.js"></script>
+</body>
+</html>
