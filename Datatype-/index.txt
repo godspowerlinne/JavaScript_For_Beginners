@@ -1,35 +1,138 @@
 // JavaScript Data Types Exercise
 
-// 1. Declare a variable to store a string value
-let name = "John Doe";
+/* 
+1. Primitive Data Types:
+- String
+- Number
+- Boolean
+- Undefined
+- Null
+- Symbol
+- BigInt
 
-// 2. Declare a variable to store a number value
-let age = 30;
+2. Reference Data Type:
+- Object (including Arrays and Functions)
+*/
 
-// 3. Declare a variable to store a boolean value
-let isAdmin = true;
+// String Data Type
+let firstName = "John";
+let lastName = 'Doe';
+let template = `Hello, ${firstName}`; // Template literal
+console.log("String length:", firstName.length);
+console.log("Uppercase:", firstName.toUpperCase());
+console.log("Concatenation:", firstName + " " + lastName);
 
-// 4. Declare a variable to store an array value
-let colors = ["red", "green", "blue"];
+// Number Data Type
+let integer = 42;
+let float = 3.14;
+let scientific = 2.998e8;
+let binary = 0b1010; // Binary number
+let octal = 0o744;   // Octal number
+let hex = 0xFF;      // Hexadecimal number
+console.log("Math operations:", integer + float);
+console.log("Is finite:", Number.isFinite(scientific));
+console.log("Parse float:", parseFloat("3.14"));
 
-// 5. Declare a variable to store an object value
+// Boolean Data Type
+let isActive = true;
+let isLoggedIn = false;
+console.log("NOT operator:", !isActive);
+console.log("AND operator:", isActive && isLoggedIn);
+console.log("OR operator:", isActive || isLoggedIn);
+
+// Undefined and Null
+let undefinedVar;
+let nullVar = null;
+console.log("Undefined check:", typeof undefinedVar);
+console.log("Null check:", nullVar === null);
+
+// Symbol Data Type
+let symbol1 = Symbol("description");
+let symbol2 = Symbol("description");
+console.log("Symbols are unique:", symbol1 === symbol2); // false
+
+// BigInt Data Type
+let bigNumber = 9007199254740991n;
+let anotherBigNumber = BigInt("9007199254740991");
+console.log("BigInt addition:", bigNumber + 1n);
+
+// Object Data Type
 let person = {
-  name: "Jane Doe",
-  age: 25,
-  occupation: "Developer"
+    name: "John Doe",
+    age: 30,
+    isStudent: false,
+    hobbies: ["reading", "music"],
+    address: {
+        street: "123 Main St",
+        city: "Boston"
+    },
+    greet: function() {
+        return `Hello, I'm ${this.name}`;
+    }
 };
+console.log("Object property:", person.name);
+console.log("Object method:", person.greet());
 
-// 6. Declare a variable to store a null value
-let nullValue = null;
+// Array Data Type
+let fruits = ["apple", "banana", "orange"];
+console.log("Array length:", fruits.length);
+console.log("First element:", fruits[0]);
+fruits.push("grape");
+console.log("After push:", fruits);
 
-// 7. Declare a variable to store an undefined value
-let undefinedValue;
+// Type Conversion Exercises
+console.log("\nType Conversion Examples:");
+// String to Number
+console.log("String to Number:", Number("42"));
+console.log("Parse Int:", parseInt("42.5"));
+console.log("Parse Float:", parseFloat("42.5"));
 
-// 8. Use the typeof operator to check the data type of a variable
-console.log(typeof name); // Output: string
-console.log(typeof age); // Output: number
-console.log(typeof isAdmin); // Output: boolean
-console.log(typeof colors); // Output: object
-console.log(typeof person); // Output: object
-console.log(typeof nullValue); // Output: object
-console.log(typeof undefinedValue); // Output: undefined
+// Number to String
+console.log("Number to String:", String(42));
+console.log("Using toString:", (42).toString());
+
+// Boolean Conversion
+console.log("String to Boolean:", Boolean(""));
+console.log("Number to Boolean:", Boolean(0));
+
+// Practice Exercises
+/*
+Exercise 1: Type Identification
+Create a function that takes any value and returns its data type
+*/
+function getDataType(value) {
+    return typeof value;
+}
+console.log("\nExercise 1 - Type Identification:");
+console.log(getDataType("Hello")); // string
+console.log(getDataType(42));      // number
+console.log(getDataType(true));    // boolean
+console.log(getDataType({}));      // object
+console.log(getDataType(null));    // object
+
+/*
+Exercise 2: Type Conversion
+Create a function that safely converts a string to a number
+*/
+function safeNumberConversion(value) {
+    const number = Number(value);
+    return isNaN(number) ? 0 : number;
+}
+console.log("\nExercise 2 - Type Conversion:");
+console.log(safeNumberConversion("42"));    // 42
+console.log(safeNumberConversion("abc"));   // 0
+console.log(safeNumberConversion("3.14"));  // 3.14
+
+/*
+Exercise 3: Array Type Checking
+Create a function that checks if all elements in an array are of the same type
+*/
+function areAllSameType(arr) {
+    if (!Array.isArray(arr) || arr.length === 0) return false;
+    const firstType = typeof arr[0];
+    return arr.every(item => typeof item === firstType);
+}
+console.log("\nExercise 3 - Array Type Checking:");
+console.log(areAllSameType([1, 2, 3]));          // true
+console.log(areAllSameType([1, "2", 3]));        // false
+console.log(areAllSameType(["a", "b", "c"]));    // true
