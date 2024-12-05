@@ -1,0 +1,49 @@
+// Creating an object in JavaScript
+let person = {
+  // Properties
+  name: 'John Doe',
+  age: 30,
+  occupation: 'Software Developer',
+  
+  // Methods
+  greet: function() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+};
+
+// Accessing object properties
+console.log(person.name); // Output: John Doe
+console.log(person['age']); // Output: 30
+
+// Updating object properties
+person.name = 'Jane Doe';
+console.log(person.name); // Output: Jane Doe
+
+// Adding new properties
+person.country = 'USA';
+console.log(person.country); // Output: USA
+
+// Deleting properties
+delete person.occupation;
+console.log(person.occupation); // Output: undefined
+
+// Using the 'in' operator to check if a property exists
+console.log('name' in person); // Output: true
+console.log(' occupation' in person); // Output: false
+
+// Using the 'for...in' loop to iterate over object properties
+for (let prop in person) {
+  console.log(`${prop}: ${person[prop]}`);
+}
+
+// Using the 'Object.keys()' method to get an array of object properties
+let props = Object.keys(person);
+console.log(props); // Output: ['name', 'age', 'country']
+
+// Using the 'Object.values()' method to get an array of object values
+let values = Object.values(person);
+console.log(values); // Output: ['Jane Doe', 30, 'USA']
+
+// Using the 'Object.entries()' method to get an array of object key-value pairs
+let entries = Object.entries(person);
+console.log(entries); // Output: [['name', 'Jane Doe'], ['age', 30], ['country', 'USA']]
