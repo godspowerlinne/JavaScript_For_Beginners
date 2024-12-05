@@ -1,0 +1,35 @@
+// JavaScript Data Types Exercise
+
+// 1. Declare a variable to store a string value
+let name = "John Doe";
+
+// 2. Declare a variable to store a number value
+let age = 30;
+
+// 3. Declare a variable to store a boolean value
+let isAdmin = true;
+
+// 4. Declare a variable to store an array value
+let colors = ["red", "green", "blue"];
+
+// 5. Declare a variable to store an object value
+let person = {
+  name: "Jane Doe",
+  age: 25,
+  occupation: "Developer"
+};
+
+// 6. Declare a variable to store a null value
+let nullValue = null;
+
+// 7. Declare a variable to store an undefined value
+let undefinedValue;
+
+// 8. Use the typeof operator to check the data type of a variable
+console.log(typeof name); // Output: string
+console.log(typeof age); // Output: number
+console.log(typeof isAdmin); // Output: boolean
+console.log(typeof colors); // Output: object
+console.log(typeof person); // Output: object
+console.log(typeof nullValue); // Output: object
+console.log(typeof undefinedValue); // Output: undefined
